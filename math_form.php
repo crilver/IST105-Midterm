@@ -1,6 +1,6 @@
 <html>
     <h1>Midterm Exam - Cristobal Lara</h1>
-    <form action="process.php" method="post">
+    <form action="process_math.php" method="post">
         <label>Input for number 1:</label>
         <input type="number" name="num1" required>
         <br>
