@@ -33,7 +33,7 @@ print("<br>")
 print("<h2>Result:</h2>")
 
 result = 0
-if operation == "sum":
+if operation == "add":
     result = sum(num1, num2)
 elif operation == "sub":
     result = sub(num1, num2)
