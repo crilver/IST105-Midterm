@@ -1,11 +1,10 @@
 <?php
-    use KnotsPHP\PublicIP\Finders\PublicIPv4;
     $num1 = escapeshellarg($_POST['num1']);
     $num2 = escapeshellarg($_POST['num2']);
     $operation = escapeshellarg($_POST['operation']);
     $command = escapeshellcmd("python3 math_operations.py $num1 $num2 $operation");
     $output = shell_exec($command);
-    $ipv4 = PublicIPv4::get();
+    $ipv4 = file_get_contents("http://checkip.amazonaws.com/");
     $host = $_SERVER['HTTP_HOST'];
 
     echo "<h1>Midterm Exam - Cristobal Lara</h1>";
