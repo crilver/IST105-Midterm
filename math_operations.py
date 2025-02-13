@@ -23,33 +23,28 @@ def div(a, b):
 def is_number_regex(input):
     return bool(re.match(r'^\d+[.]?\d*$', str(input)))
 
-print("<h2>Your selections were:</h2>")
-print("<ul>")
-print(f"<li>First number: {num1}</li>")
-print(f"<li>Second number: {num2}</li>")
-print(f"<li>Selected operation: {operation}</li>")
-print("</ul>")
-print("<br>")
 print("<h2>Result:</h2>")
+print("<ul>")
+print(f"<li>Operation: {operation}</li>")
+print(f"<li>Input 1: {num1}</li>")
+print(f"<li>Input 2: {num2}</li>")
 
 result = 0
-if operation == "add":
+if operation == "Addition":
     result = sum(num1, num2)
-elif operation == "sub":
+elif operation == "Subtraction":
     result = sub(num1, num2)
-elif operation == "mul":
+elif operation == "Multiplication":
     result = mul(num1, num2)
 else:
     result = div(num1, num2)
 
-if not is_number_regex(result):
-    print(f"<h2>{result}</h2>")
-else:
+if is_number_regex(result):
     if result > 100:
-        print(f"<h2>The result {result} is greater than 100 and will be multiplied by 2</h2>")
         result *= 2
     elif result < 0:
-        print(f"<h2>The result {result} is less than 0 -> 50 added to the result</h2>")
         result += 50
 
-    print(f"<h2>Final Result: {result}</h2>")
+print(f"<li>Result: {result}</li>")
+print("</ul>")
+print("<br>")
